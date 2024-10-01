@@ -5,7 +5,7 @@ import NotFound from "./page/NotFound";
 import Contents from "./page/Contents";
 import Profile from "./page/Profile";
 import Login from "./page/Login";
-import { mockFeed, mockPost } from "./mockData";
+import { mockFeed, mockPost, mockProfile } from "./mockData";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,11 @@ const router = createBrowserRouter([
         element: <Contents />,
         loader: ({ params }) => mockPost(params.contentId),
       },
-      { path: "profile", element: <Profile /> },
+      {
+        path: "profile/:userId",
+        element: <Profile />,
+        loader: ({ params }) => mockProfile(params.userId),
+      },
     ],
   },
   { path: "login", element: <Login /> },

@@ -31,3 +31,14 @@ export const mockPost = (id) => ({
     ...generateMockData(5).map((item) => ({ ...item, parentId: parseInt(id) })),
   ],
 });
+
+export const mockProfile = (id) => ({
+  profile: {
+    userName: "User1",
+    email: "abc@abc.com",
+    faceUrl: "https://randomuser.me/api/portraits/men/1.jpg",
+    timestamp: new Date(
+      Date.now() - Math.floor(Math.random() * 10000000000)
+    ).toISOString(),
+  },
+});

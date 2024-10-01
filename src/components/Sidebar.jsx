@@ -2,11 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { House, UserRoundPen } from "lucide-react";
 import icon from "../icon.png";
+import useUserStore from "../store";
 
 const Sidebar = () => {
+  const { userId } = useUserStore();
+  let userLink = "profile/1"; // temporal, /login으로 바꾸어야 함
+  if (userId !== "") {
+    userLink = `/profile/${userId}`;
+  }
+
   const icons = [
     { Icon: House, label: "Home", link: "/" },
-    { Icon: UserRoundPen, label: "Profile", link: "profile" },
+    { Icon: UserRoundPen, label: "Profile", link: userLink },
   ];
   return (
     <div className="h-screen flex flex-col">

@@ -9,6 +9,8 @@ function getPageName(pathName) {
     return "홈";
   } else if (pathName.startsWith("/content/")) {
     return "스레드";
+  } else if (pathName.startsWith("/profile/")) {
+    return "사용자 정보";
   }
 }
 
