@@ -30,9 +30,9 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Contents />, loader: () => mockFeed },
       {
-        path: "content/:contentId",
+        path: ":userId/:contentId",
         element: <Contents />,
-        loader: ({ params }) => mockPost(params.contentId),
+        loader: ({ params }) => mockPost(params.userId, params.contentId),
       },
       {
         path: "write",

@@ -7,12 +7,12 @@ import UserNav from "../components/UserNav";
 function getPageName(pathName) {
   if (pathName === "/") {
     return "홈";
-  } else if (pathName.startsWith("/content/")) {
-    return "스레드";
   } else if (pathName.startsWith("/profile/")) {
     return "사용자 정보";
   } else if (pathName.startsWith("/write")) {
     return "새 글 쓰기";
+  } else {
+    return "스레드";
   }
 }
 

@@ -7,7 +7,7 @@ export const useUserStore = create(
       user: null, // 전체 사용자 객체
       token: null,
 
-      // 개별 필드들 (기존 코드와의 호환성을 위해 유지)
+      // 개별 필드들
       userId: "",
       username: "",
       userPic: "",

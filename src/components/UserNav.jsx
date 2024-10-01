@@ -4,7 +4,6 @@ import { useUserStore } from "../store";
 
 export default function UserNav() {
   const { username, userPic } = useUserStore();
-
   const routingAdd = username ? "/profile" : "/login";
 
   return (

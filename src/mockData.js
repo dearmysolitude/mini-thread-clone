@@ -2,6 +2,7 @@ const generateMockData = (count) => {
   return Array.from({ length: count }, (_, i) => ({
     id: i + 1,
     authorName: `User ${i + 1}`,
+    username: `User ${i + 1}`,
     contentId: i + 1,
     faceUrl: `https://randomuser.me/api/portraits/${i % 2 ? "women" : "men"}/${
       (i % 70) + 1
@@ -21,7 +22,7 @@ export const mockFeed = {
   items: generateMockData(20),
 };
 
-export const mockPost = (id) => ({
+export const mockPost = (username, id) => ({
   items: [
     ...generateMockData(1).map((item) => ({
       ...item,
