@@ -11,6 +11,8 @@ function getPageName(pathName) {
     return "스레드";
   } else if (pathName.startsWith("/profile/")) {
     return "사용자 정보";
+  } else if (pathName.startsWith("/write")) {
+    return "새 글 쓰기";
   }
 }
 

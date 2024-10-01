@@ -1,6 +1,6 @@
 import { CircleUserRound } from "lucide-react"; // Lucide 아이콘 사용
 import { Link } from "react-router-dom";
-import useUserStore from "../store";
+import { useUserStore } from "../store";
 
 export default function UserNav() {
   const { username, userPic } = useUserStore();

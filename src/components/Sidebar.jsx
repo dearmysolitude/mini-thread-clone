@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { House, UserRoundPen } from "lucide-react";
+import { House, UserRoundPen, Plus } from "lucide-react";
 import icon from "../icon.png";
-import useUserStore from "../store";
+import { useUserStore } from "../store";
 
 const Sidebar = () => {
   const { userId } = useUserStore();
@@ -13,6 +13,7 @@ const Sidebar = () => {
 
   const icons = [
     { Icon: House, label: "Home", link: "/" },
+    { Icon: Plus, label: "New Thread", link: "/write" },
     { Icon: UserRoundPen, label: "Profile", link: userLink },
   ];
   return (
