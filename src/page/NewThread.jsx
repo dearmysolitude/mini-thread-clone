@@ -4,6 +4,8 @@ import { useUserStore } from "../store";
 import { useState } from "react";
 
 export default function NewThread() {
+  const { username, userPic } = useUserStore();
+
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();

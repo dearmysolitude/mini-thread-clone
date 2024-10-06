@@ -2,7 +2,7 @@ import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  useNavigate,
+  redirect,
 } from "react-router-dom";
 import Root from "./page/Root";
 import NotFound from "./page/NotFound";
@@ -14,11 +14,10 @@ import { mockFeed, mockPost, mockProfile } from "./mockData";
 import { useUserStore } from "./store";
 
 const authLoader = () => {
-  const navigate = useNavigate;
-  const isAutenticated = useUserStore.getState().isAutenticated;
+  const isAuthenticated = useUserStore.getState().isAuthenticated();
 
-  if (!isAutenticated()) {
-    navigate("/login");
+  if (!isAuthenticated) {
+    return redirect("/login");
   }
   return null;
 };
@@ -32,17 +31,17 @@ const router = createBrowserRouter([
       {
         path: ":userId/:contentId",
         element: <Contents />,
-        loader: ({ params }) => mockPost(params.userId, params.contentId),
+        // loader: ({ params }) => mockPost(params.userId, params.contentId),
       },
       {
         path: "write",
         element: <NewThread />,
-        // loader: authLoader,
+        loader: authLoader,
       },
       {
         path: "profile/:userId",
         element: <Profile />,
-        loader: ({ params }) => mockProfile(params.userId), //authLoader 로 변경
+        // loader: authLoader, //({ params }) => mockProfile(params.userId) 로 변경
       },
     ],
   },

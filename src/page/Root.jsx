@@ -32,7 +32,7 @@ export default function Root() {
           <Header pageName={pageName} />
         </header>
         <UserNav />
-        <main className="flex-grow p-2 padding-0">
+        <main className="flex-grow p-2 padding-0 bg-threads-background-light dark:bg-threads-background-dark min-h-screen pt-[var(--header-height,0px)] flex justify-center">
           <Outlet />
         </main>
       </div>
