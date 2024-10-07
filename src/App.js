@@ -31,12 +31,12 @@ const router = createBrowserRouter([
       {
         path: ":userId/:contentId",
         element: <Contents />,
-        // loader: ({ params }) => mockPost(params.userId, params.contentId),
+        loader: ({ params }) => mockPost(params.userId, params.contentId),
       },
       {
         path: "write",
         element: <NewThread />,
-        loader: authLoader,
+        // loader: authLoader,
       },
       {
         path: "profile/:userId",

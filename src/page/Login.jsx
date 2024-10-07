@@ -23,7 +23,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen dark:bg-threads-background-primary-dark flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
           로그인
@@ -31,17 +31,17 @@ const LoginPage = () => {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="grid grid-cols-4 divide-x">
+        <div className="grid grid-cols-3 divide-x">
           <button
             onClick={() => {
               navigate("/");
             }}
-            className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-transparent col-start-4"
+            className="w-full flex justify-center py-2 px-4 font-bold text-white col-start-3"
           >
             ← 되돌아가기
           </button>
         </div>
-        <div className="bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="dark:bg-threads-background-secondary-dark py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
@@ -59,7 +59,7 @@ const LoginPage = () => {
                   required
                   value={email}
                   onChange={handleEmailChange}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 bg-gray-700 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full px-3 py-2 rounded-md shadow-sm dark:bg-threads-background-third-dark text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 "
                 />
               </div>
             </div>
@@ -80,7 +80,7 @@ const LoginPage = () => {
                   required
                   value={password}
                   onChange={handlePasswordChange}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 bg-gray-700 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="block w-full px-3 py-2 rounded-md shadow-sm placeholder-gray-400 dark:bg-threads-background-third-dark text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -101,7 +101,7 @@ const LoginPage = () => {
                 <div className="w-full border-t border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gray-800 text-gray-400">
+                <span className="px-2 dark:bg-threads-background-secondary-dark dark:text-threads-text-primary-dark">
                   Or continue with
                 </span>
               </div>

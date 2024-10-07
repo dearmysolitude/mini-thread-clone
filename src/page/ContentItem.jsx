@@ -49,6 +49,7 @@ export default function ContentItem({ item, onDelete }) {
     content,
     likes,
     replies,
+    file,
   } = item;
 
   return (
@@ -74,6 +75,21 @@ export default function ContentItem({ item, onDelete }) {
           <p className="text-[13px] text-threads-text-primary-light dark:text-threads-text-primary-dark break-words">
             {content}
           </p>
+          <div className="shadow-md w-auto h-auto m-1">
+            {file.image && (
+              <img
+                src={file.url}
+                className="object-contain rounded-2xl shadow-2xl"
+              />
+            )}
+            {file.video && (
+              <video
+                src={file.url}
+                controls
+                className="object-contain rounded-2xl shadow-2xl"
+              />
+            )}
+          </div>
           <LikesAndReplies
             contentId={contentId}
             likes={likes}

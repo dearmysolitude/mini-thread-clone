@@ -6,8 +6,18 @@ module.exports = {
       colors: {
         threads: {
           background: {
-            light: "#FFFFFF",
-            dark: "#000000",
+            primary: {
+              light: "#FFFFFF",
+              dark: "#1D1D1D",
+            },
+            secondary: {
+              light: "#FFFFFF",
+              dark: "#2D2D2D",
+            },
+            third: {
+              light: "#FFFFFF",
+              dark: "#3D3D3D",
+            },
           },
           text: {
             primary: {
@@ -21,7 +31,7 @@ module.exports = {
           },
           border: {
             light: "#EFF3F4",
-            dark: "#2F3336",
+            dark: "#555555",
           },
           action: {
             default: "#FFFFFF",

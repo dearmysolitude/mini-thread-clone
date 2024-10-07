@@ -1,24 +1,23 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useUserStore } from "../store";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 export default function Profile() {
   const { user } = useUserStore();
+  const navigate = useNavigate();
 
   return (
     <div
-      className="w-full max-w-[800px] px-4 sm:px-24 bg-black dark:bg-gray-800
-                  shadow-sm border-b border-gray-200 dark:border-gray-300
-                  light:bg-white"
+      className="flex flex-col justify-center w-full max-w-[800px] px-4 sm:px-24 bg-black dark:bg-threads-background-secondary-dark
+                  shadow-sm dark:border-threads-border-dark border dark:text-threads-text-primary-dark
+                  light:bg-white p-10 m-10 rounded-2xl"
     >
       <br />
       <form>
         <div className="space-y-12">
-          <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
-              Profile
-            </h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">
+          <div className="border-b border-gray-900/10 pb-6">
+            <h2 className="text-base font-semibold leading-7">Profile</h2>
+            <p className="mt-1 text-sm leading-6 dark:text-threads-text-secondary-dark">
               This information will be displayed publicly so be careful what you
               share.
             </p>
@@ -27,7 +26,7 @@ export default function Profile() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="username"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Username
                 </label>
@@ -50,36 +49,33 @@ export default function Profile() {
               <div className="col-span-full">
                 <label
                   htmlFor="about"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   About
                 </label>
+                <p className="text-sm leading-6 dark:text-threads-text-secondary-dark">
+                  Write a few sentences about yourself.
+                </p>
                 <div className="mt-2">
                   <textarea
                     id="about"
                     name="about"
                     rows={3}
-                    className="block w-full rounded-md border-0 py-1.5 bg-gray-400 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 dark:bg-threads-background-third-dark text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={""}
                   />
                 </div>
-                <p className="mt-3 text-sm leading-6 text-gray-600">
-                  Write a few sentences about yourself.
-                </p>
               </div>
 
               <div className="col-span-full">
                 <label
                   htmlFor="photo"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Photo
                 </label>
                 <div className="mt-2 flex items-center gap-x-3">
-                  <UserCircleIcon
-                    aria-hidden="true"
-                    className="h-12 w-12 text-gray-300"
-                  />
+                  <UserCircleIcon aria-hidden="true" className="h-12 w-12" />
                   <button
                     type="button"
                     className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -92,11 +88,11 @@ export default function Profile() {
               <div className="col-span-full">
                 <label
                   htmlFor="cover-photo"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Cover photo
                 </label>
-                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                <div className="mt-2 flex justify-center rounded-lg border border-dashed border-white px-6 py-10">
                   <div className="text-center">
                     <PhotoIcon
                       aria-hidden="true"
@@ -115,9 +111,11 @@ export default function Profile() {
                           className="sr-only"
                         />
                       </label>
-                      <p className="pl-1">or drag and drop</p>
+                      <p className="pl-1 dark:text-threads-text-secondary-dark">
+                        or drag and drop
+                      </p>
                     </div>
-                    <p className="text-xs leading-5 text-gray-600">
+                    <p className="text-xs leading-5 dark:text-threads-text-secondary-dark">
                       PNG, JPG, GIF up to 10MB
                     </p>
                   </div>
@@ -126,11 +124,11 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
+          <div className="border-b border-gray-900/10 pb-6">
+            <h2 className="text-base font-semibold leading-7">
               Personal Information
             </h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">
+            <p className="mt-1 text-sm leading-6 dark:text-threads-text-secondary-dark">
               Use a permanent address where you can receive mail.
             </p>
 
@@ -138,7 +136,7 @@ export default function Profile() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Password
                 </label>
@@ -159,7 +157,7 @@ export default function Profile() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="first-name"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   First name
                 </label>
@@ -169,7 +167,7 @@ export default function Profile() {
                     name="first-name"
                     type="text"
                     autoComplete="given-name"
-                    className="block w-full bg-gray-400 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full dark:bg-threads-background-third-dark rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -177,7 +175,7 @@ export default function Profile() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="last-name"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Last name
                 </label>
@@ -187,7 +185,7 @@ export default function Profile() {
                     name="last-name"
                     type="text"
                     autoComplete="family-name"
-                    className="block w-full bg-gray-400 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full dark:bg-threads-background-third-dark rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -195,7 +193,7 @@ export default function Profile() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6"
                 >
                   Email address
                 </label>
@@ -205,7 +203,7 @@ export default function Profile() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full bg-gray-400 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full dark:bg-threads-background-third-dark rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -216,7 +214,10 @@ export default function Profile() {
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button
             type="button"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6"
+            onClick={() => {
+              navigate("/");
+            }}
           >
             Cancel
           </button>
@@ -228,6 +229,7 @@ export default function Profile() {
           </button>
         </div>
       </form>
+      <br />
     </div>
   );
 }

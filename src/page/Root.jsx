@@ -28,11 +28,11 @@ export default function Root() {
       </nav>
 
       <div className="flex flex-col flex-grow">
-        <header className="sticky top-0 z-20 bg-white dark:bg-black shadow-sm h-14">
+        <header className="sticky top-0 z-20 bg-white dark:bg-threads-background-primary-dark shadow-sm h-14">
           <Header pageName={pageName} />
         </header>
         <UserNav />
-        <main className="flex-grow p-2 padding-0 bg-threads-background-light dark:bg-threads-background-dark min-h-screen pt-[var(--header-height,0px)] flex justify-center">
+        <main className="flex-grow p-2 padding-0 bg-threads-background-primary-light dark:bg-threads-background-primary-dark min-h-screen pt-[var(--header-height,0px)] flex justify-center items-center">
           <Outlet />
         </main>
       </div>
